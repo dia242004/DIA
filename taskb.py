@@ -14,8 +14,8 @@ def from_sqlite3(query):
 
 # Home page route
 @app.route('/')
-def home():
-    return render_template('home.html')
+def index():
+    return render_template('index.html')
 
 # Customers page route
 @app.route('/customers/')
@@ -54,7 +54,7 @@ def add_customer():
             if conn:
                 conn.close()
 
-        return redirect(url_for('home'))
+        return redirect(url_for('index'))
 
     return render_template('add_customer.html')  
 
